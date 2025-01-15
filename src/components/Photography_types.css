@@ -1,0 +1,106 @@
+
+/* Services Section */
+.services-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .services-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .services-grid {
+    padding: 1rem 5rem 1rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+    gap: 60px;
+    margin: 0 auto;
+  }
+  
+  /* Service Tile */
+  .service-tile {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-tile:hover img {
+    transform: scale(1.1);
+  }
+  
+  .service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white;
+    display: flex;
+    flex-direction: column; /* Allow vertical stacking of title and slogan */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .service-tile:hover .service-overlay {
+    opacity: 1;
+  }
+  
+  .service-overlay h3 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 10px; /* Add space between title and slogan */
+  }
+  
+  .slogan {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #ff6666; /* Red color accent */
+    margin-top: 0; /* Ensure no extra space on top */
+    text-align: center; /* Center the slogan under the title */
+  }
+  
+  
+  
+  /* Add gradient for mobile view (where hover is not effective) */
+  @media (max-width: 768px) {
+    .service-tile {
+        /* Add gradient overlay below the image for mobile */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    }
+  
+    .service-overlay {
+        /* Adjust for mobile, always visible background with text */
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .service-overlay h3 {
+        font-size: 1.2rem; /* Smaller title for mobile */
+    }
+  
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        
+        padding: 0; /* Remove padding */
+        gap: 10px; /* Reduce gap */
+    }
+  }
+  

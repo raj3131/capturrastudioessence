@@ -1,0 +1,212 @@
+/* General Styling */
+.service-page {
+    padding: 20px;
+    text-align: center;    
+}
+
+.service-page h1 {
+    margin-top: 100px;
+    text-align: center;  
+    font-size: 4rem;
+    font-weight: bold; /* Makes the text more prominent */
+    color: #f8f9fa; /* Soft white for text color */
+    background: linear-gradient(90deg, #ff0000, #e35c5c, #ffffff); /* Gradient background with black, red, and white */
+
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    padding: 10px 20px; /* Adds padding for better spacing */
+    border-radius: 5px; /* Smooth rounded edges */
+   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* Adds subtle shadow to the text */
+    transition: all 0.3s ease-in-out; /* Smooth hover animations */
+}
+
+/* Masonry Gallery */
+.masonry-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible column sizing */
+    gap: 10px; /* Space between items */
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .masonry-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 items in a row on medium screens */
+    }
+}
+
+@media (min-width: 1025px) {
+    .masonry-gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 items in a row on large screens */
+    }
+}
+
+.masonry-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 2; /* Maintain consistent aspect ratio for items */
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images fill the container */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.masonry-item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.masonry-item:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Booking Section */
+.booking-section {
+    background: linear-gradient(145deg, #f9f9f9, #f1f1f1);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.booking-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #d32f2f;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+}
+
+
+
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal-content {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .close:hover {
+    color: #ccc;
+  }
+  
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+
+    .service-page h1 {
+        padding-top: 50px;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        text-transform: capitalize;
+        color: #333;
+    }
+    .masonry-gallery {
+        grid-template-columns: 1fr; 
+        gap: 8px;
+    }
+
+    .booking-section {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .booking-section h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-page h1 {
+        margin-top: 50px;
+        font-size: 1.8em;
+    }
+
+    .booking-section h2 {
+        font-size: 1.8em;
+    }
+
+    button[type="submit"] {
+        font-size: 1.1em;
+    }
+}
