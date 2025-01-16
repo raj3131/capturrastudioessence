@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import logo from '../Images/2-removebg-preview.png'; // Import the logo image
+import logo from '../Images/1-removebg-preview.png'; // Import the logo image
 
 function Header() {
   const [scrollingDown, setScrollingDown] = useState(false);
@@ -42,7 +42,19 @@ useEffect(() => {
       <div className="logo">
         <img src={logo} alt="Capturra Studio Essence" />
       </div>
-      <h1 className="logoName">Capturra Studio Essence</h1>
+      <div className="overlay-text">
+            <div className="button">
+            <div className="box">C</div>
+            <div className="box">A</div>
+            <div className="box">P</div>
+            <div className="box">T</div>
+            <div className="box">U</div>
+            <div className="box">R</div>
+            <div className="box">R</div>
+            <div className="box">A</div>
+            
+            </div>
+          </div>
       <nav>
         {/* Hamburger Menu for Mobile */}
         <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>

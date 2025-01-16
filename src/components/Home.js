@@ -18,6 +18,7 @@ import sampleVideo2 from "../Images/videos/Sahana For Upload.mp4";
 import hero1 from "../Images/photo-collage.png.png";
 import hero2 from "../Images/photo-collage.png (1).png";
 
+import Categories from "./Categories";
 function Home() {
   const gridRef = useRef(null);
 
@@ -127,27 +128,29 @@ function Home() {
           <img src={hero1} alt="Image 1" />
           <img src={hero2} alt="Image 2" />
           <div className="overlay">
-            <h1>Your Vision, Our Lens, Perfect Memories.</h1>
+            <div className="button">
+              <div className="hero-content">
+                <h1>Welcome to Capturra Studio</h1>
+                <p>Capturing Moments, Creating Memories</p>
+                {/* <div className="container-button">
+            <Link to="/services" className="hero-button">Explore Services</Link>
+          </div> */}
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* <div className="hero-content">
-          <h1>Welcome to Capturra Studio</h1>
-          <p>Capturing Moments, Creating Memories</p>
-          <div className="container-button">
-            <Link to="/services" className="hero-button">Explore Services</Link>
-          </div>
-        </div> */}
       </section>
 
       {/* Services Section */}
       <section className="services-section">
         <div className="section-header" ref={gridRef}>
-          <h2>     Our Services          </h2>
+          <h2> Our Services </h2>
           <p id="slogan" className={highlight === "slogan" ? "highlight" : ""}>
             Discover the best solutions tailored for you.
           </p>
         </div>
+
+        <Categories />
 
         <div className="services-grid" ref={gridRef}>
           {services.map((service, index) => (

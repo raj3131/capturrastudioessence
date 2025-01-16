@@ -1,0 +1,377 @@
+/* Container for the row and column */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 100vw; */
+}
+
+/* Row to hold the icon column */
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 30px; /* Space between categories */
+}
+
+/* Column that contains all the icons */
+.icon-column {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 90px;
+  padding-right: 90px;
+  position: relative;  
+ }
+
+.category {
+  margin: 20px;
+  text-align: center;
+  position: relative; /* For positioning the arrow */
+  cursor: pointer;
+}
+
+/* Icon container */
+.icons {
+  height: 100px;
+  width: 100px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 15px;
+  background: #e0e0e0;
+  box-shadow: inset 17px 17px 33px #bebebe, inset -17px -17px 33px #ffffff;
+}
+
+
+
+.icons:hover {
+  border-radius: 15x;
+  background: #e0e0e0;
+  box-shadow: 17px 17px 33px #bebebe, -17px -17px 33px #ffffff;
+}
+
+.arrow i {
+  font-size: 20px; /* Adjust size */
+  color: #333; /* Adjust color */
+  transition: transform 0.3s ease;
+}
+
+.arrow i:hover {
+  color: #000; /* Hover effect */
+  transform: scale(1.2); /* Slight grow on hover */
+}
+
+/* Icon image */
+.category-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+
+
+
+
+
+
+
+
+/* Media item styles */
+.media-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.media-item {
+  max-width: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.media-item.video {
+  max-width: 300px;
+}
+
+.dropdown {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.dropdown-content {
+  background-color: rgba(0, 0, 0, 0.6); /* To make text readable on images */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+.media-item {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+/* ================================================================================================ */
+@media (max-width: 768px) {
+  .icon-column {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .category {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+
+  .arrow {
+    display: none;
+  }
+
+  .icon-column {
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 20px; /* Add spacing between the icons */
+   
+  }
+  
+  .icon-column::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for WebKit browsers */
+  }
+  
+  .category {
+    scroll-snap-align: center; /* Snap each item to the center when scrolling stops */
+  }
+  
+  
+
+  .category {
+    display:none;
+    flex-shrink: 0;  /* Prevents items from shrinking */
+    margin: 0 10px;   /* Add space between items */
+    transition: transform 0.3s ease, scale 0.3s ease;  /* Smooth transition for scaling */
+    scroll-snap-align: center;  /* Ensure the item aligns to the center when it’s scrolled */
+  }
+  
+  .icon-column::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+  }
+  
+  /* When the element is in focus (or centered), scale it */
+  .icon-column .category:focus-within,
+  .icon-column .category:hover {
+    transform: scale(1.2);  /* Scale up when centered */
+    z-index: 10;  /* Bring the centered item to the front */
+  }
+  
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.category-icon {
+  width: 80px; /* Adjust the size of the icons */
+  height: 80px;
+  object-fit: cover; /* Maintain aspect ratio */
+  margin-bottom: 8px;
+  /* margin: 10px; */
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 14px; /* Adjust arrow size */
+  color: #666; /* Customize arrow color */
+}
+
+.floating-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%; /* Buttons stretch across the slider */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none; /* Prevent blocking swipe interactions */
+}
+
+.prev-btn,
+.next-btn {
+  pointer-events: auto; /* Enable click interaction */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border: none;
+  border-radius: 50%; /* Circle button */
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1; /* Ensure buttons are above slider content */
+  transition: background-color 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+.prev-btn {
+  position: absolute;
+  left: 10px; /* Adjust horizontal positioning */
+}
+
+.next-btn {
+  position: absolute;
+  right: 10px; /* Adjust horizontal positioning */
+}
+
+
+
+
+
+
+
+
+
+
+.category-slider {
+  width: 90vw; 
+  
+}
+
+.floating-buttons {
+  display: none; /* Hide buttons on mobile for swipe functionality */
+}
+
+.category-icon {
+  width: 60px; /* Smaller icons for mobile */
+  height: 60px;
+}
+
+.arrow {
+  font-size: 12px; /* Smaller arrows for mobile */
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .category-slider {
+    width: 100%; /* Adjust slider width for smaller screens */
+  }
+
+  .floating-buttons {
+    display: none; /* Hide buttons on mobile for swipe functionality */
+  }
+
+  .category-icon {
+    width: 60px; /* Smaller icons for mobile */
+    height: 60px;
+  }
+
+  .arrow {
+    font-size: 12px; /* Smaller arrows for mobile */
+  }
+
+
+
+
+
+
+  .dropdown-content {
+    background-color: rgba(0, 0, 0, 0.6); /* To make text readable on images */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+  }
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
