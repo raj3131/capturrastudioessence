@@ -20,7 +20,7 @@ import candidImage1 from "../Images/Haldi/Untitled design (4).jpg";
 import traditionalImage1 from "../Images/Christian Wedding/Christian Wedding_10.jpg";
 import traditionalVideo from "../Images/videos/final summer house.mp4";
 import engagementImage1 from "../Images/Lavish pre-wedding shoot/Lavish pre-wedding shoot_1.jpg";
-import weddingImage from "../Images/Destination wedding/Destination wedding_4.jpg";
+import weddingImage from "../Images/Christian Wedding/Christian Wedding_8.jpg";
 import coupleshootImage1 from "../Images/Lavish pre-wedding shoot/Lavish pre-wedding shoot_3.jpg";
 
 const categories = [
@@ -112,7 +112,7 @@ const Categories = () => {
           infinite: false, // Loop through the categories
           speed: 500, // Animation speed
           slidesToShow: 2, // Default for larger screens
-          slidesToScroll: 1,          
+          slidesToScroll: 1,
           arrows: false, // Disable navigation arrows
           swipe: true, // Enable swipe functionality
         },
@@ -131,7 +131,7 @@ const Categories = () => {
   return (
     <div className="app-container">
       <div className="category-slider">
-        <Slider ref={sliderRef} {...settings}>
+        <Slider className = "slider" ref={sliderRef} {...settings}>
           {categories.map((category) => (
             <div key={category.id} className="category">
               <div
